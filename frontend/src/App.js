@@ -1,7 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
+import React, {useEffect} from 'react';
 
 function App() {
+
+  let callAPI = () => {
+    fetch("http://localhost:9000/testAPI")
+      .then(res => res.text())
+      .then(res => console.log(res));
+  }
+
+  useEffect(() => {
+    callAPI();
+  });
+
   return (
     <div className="App">
       <header className="App-header">
